@@ -24,7 +24,8 @@ urlpatterns = patterns(
     'serv.views',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^cells/?$', CellList.as_view()),
-    url(r'^objects/?$', ObjectList.as_view()), 
+    url(r'^objects/?$', ObjectList.as_view()),
+    url(r'^api-docs/', include('rest_framework_swagger.urls')),
     url(r'^cells/(?P<pk>[0-9]+)/?$', 'cell_detail'),
     url(r'^objects/(?P<pk>[0-9]+)/?$', 'object_detail'),
 )
